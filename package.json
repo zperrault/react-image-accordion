@@ -1,0 +1,24 @@
+{
+  "name": "react-image-accordion",
+  "version": "0.0.1",
+  "description": "An animated image accordion for your React apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zperrault/react-image-accordion.git"
+  },
+  "keywords": [
+    "react",
+    "image",
+    "accordion"
+  ],
+  "author": "Zach Perrault <zach.perrault@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zperrault/react-image-accordion/issues"
+  },
+  "homepage": "https://github.com/zperrault/react-image-accordion#readme"
+}
