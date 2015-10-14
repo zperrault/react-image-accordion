@@ -1,5 +1,5 @@
-import Hello from './components/hello'
+import ImageAccordion from './components/ImageAccordion'
 
 export default {
-  Hello,
+  ImageAccordion,
 }
