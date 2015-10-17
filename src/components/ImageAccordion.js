@@ -35,6 +35,7 @@ export default class ImageAccordion extends Component {
           [idx]: {
             width,
             height,
+            ratio: width / height,
           },
         },
       })
@@ -45,21 +46,25 @@ export default class ImageAccordion extends Component {
     const { images, width, height } = this.props
     const { selectedImage, imageDimensions } = this.state
     return (
-      <div style={{
-        width: `${width}px`,
-        height: `${height}px`,
-        margin: 0,
-        padding: 0,
-      }}>
+      <div
+        style={{
+          width: `${width}px`,
+          height: `${height}px`,
+          margin: 0,
+          padding: 0,
+        }}
+        onMouseOut={() => this.setState({selectedImage: null})}
+      >
         {images.map((image, idx) => {
           if (selectedImage != null) {
-            const selectedWidth = imageDimensions[selectedImage].width
-            const unselectedWidth = (width - selectedWidth) / (images.length)
+            const selectedWidth = imageDimensions[selectedImage].ratio * height
+            const unselectedWidth = (width - selectedWidth) / (images.length - 1)
             if (idx < selectedImage) {
               return <ImageBellow
                       key={idx}
                       image={image}
                       width={unselectedWidth}
+                      height={height}
                       left={idx * unselectedWidth}
                       onMouseOver={this.handleMouseOver(idx)}
                       onImageLoaded={this.handleImageLoaded(idx)}
@@ -69,6 +74,7 @@ export default class ImageAccordion extends Component {
                       key={idx}
                       image={image}
                       width={selectedWidth}
+                      height={height}
                       left={idx * unselectedWidth}
                       onMouseOver={this.handleMouseOver(idx)}
                       onImageLoaded={this.handleImageLoaded(idx)}
@@ -78,6 +84,7 @@ export default class ImageAccordion extends Component {
                       key={idx}
                       image={image}
                       width={unselectedWidth}
+                      height={height}
                       left={((idx-1) * unselectedWidth) + selectedWidth}
                       onMouseOver={this.handleMouseOver(idx)}
                       onImageLoaded={this.handleImageLoaded(idx)}
@@ -89,6 +96,7 @@ export default class ImageAccordion extends Component {
                     key={idx}
                     image={image}
                     width={unselectedWidth}
+                    height={height}
                     left={idx * unselectedWidth}
                     onMouseOver={this.handleMouseOver(idx)}
                     onImageLoaded={this.handleImageLoaded(idx)}

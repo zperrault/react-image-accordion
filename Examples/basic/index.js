@@ -7,8 +7,8 @@ class App extends Component {
   render() {
     return (
       <ImageAccordion
-        width={979}
-        height={387}
+        width={600}
+        height={200}
         images={[
           { src: '/images/0.jpg' },
           { src: '/images/1.jpg' },

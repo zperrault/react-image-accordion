@@ -1,11 +1,17 @@
 import React, { Component, PropTypes } from 'react'
 
-import { Motion, spring } from 'react-motion'
+import { Motion, spring, presets } from 'react-motion'
+
+const SPRING = [200, 30]
 
 export default class ImageBellow extends Component {
   static propTypes = {
     onMouseOver: PropTypes.func,
+    onImageLoaded: PropTypes.func,
     image: PropTypes.object.isRequired,
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+    left: PropTypes.number.isRequired,
   }
 
   constructor(props) {
@@ -23,26 +29,26 @@ export default class ImageBellow extends Component {
   }
 
   render() {
-    const { image, width, left, onMouseOver } = this.props
+    const { image, width, height, left, onMouseOver } = this.props
     return (
       <Motion
         style={{
-          width: spring(width),
-          left: spring(left),
+          width: spring(width, SPRING),
+          left: spring(left, SPRING),
         }}
       >
         {({ width, left }) =>
           <div
             style={{
               width: width ? `${width}px` : null,
-              height: '387px',
+              height: height ? `${height}px` : null,
               position: 'absolute',
               left: `${left}px`,
               backgroundImage: `url(${image.src})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
-            onMouseOver={onMouseOver}
+            onMouseOver={() => onMouseOver && onMouseOver()}
           />
         }
       </Motion>
