@@ -1,6 +1,6 @@
 {
   "name": "react-image-accordion",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "An animated image accordion for your React apps",
   "main": "lib/index.js",
   "scripts": {
