@@ -10,20 +10,20 @@ class App extends Component {
         width={600}
         height={200}
         images={[
-          { src: '/images/0.jpg' },
-          { src: '/images/1.jpg' },
-          { src: '/images/2.jpg' },
-          { src: '/images/3.jpg' },
-          { src: '/images/4.jpg' },
-          { src: '/images/5.jpg' },
-          { src: '/images/6.jpg' },
-          { src: '/images/7.jpg' },
-          { src: '/images/8.jpg' },
-          { src: '/images/9.jpg' },
-          { src: '/images/10.jpg' },
-          { src: '/images/11.jpg' },
-          { src: '/images/12.jpg' },
-          { src: '/images/13.jpg' },
+          '/images/0.jpg',
+          '/images/1.jpg',
+          '/images/2.jpg',
+          '/images/3.jpg',
+          '/images/4.jpg',
+          '/images/5.jpg',
+          '/images/6.jpg',
+          '/images/7.jpg',
+          '/images/8.jpg',
+          '/images/9.jpg',
+          '/images/10.jpg',
+          '/images/11.jpg',
+          '/images/12.jpg',
+          '/images/13.jpg',
         ]}
       />
     )

@@ -20,7 +20,7 @@ export default class ImageBellow extends Component {
 
     const img = new Image()
     img.onload = this.handleImageLoaded
-    img.src = props.image.src
+    img.src = props.image
   }
 
   handleImageLoaded({ target: { width, height }}) {
@@ -44,7 +44,7 @@ export default class ImageBellow extends Component {
               height: height ? `${height}px` : null,
               position: 'absolute',
               left: `${left}px`,
-              backgroundImage: `url(${image.src})`,
+              backgroundImage: `url(${image})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}
