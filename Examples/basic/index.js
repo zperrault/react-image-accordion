@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 
-import { ImageAccordion } from '../../src'
+import { ImageAccordion } from 'react-image-accordion'
 
 class App extends Component {
   render() {
