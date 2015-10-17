@@ -8,7 +8,7 @@ export default class ImageBellow extends Component {
   static propTypes = {
     onMouseOver: PropTypes.func,
     onImageLoaded: PropTypes.func,
-    image: PropTypes.object.isRequired,
+    image: PropTypes.string.isRequired,
     height: PropTypes.number.isRequired,
     width: PropTypes.number.isRequired,
     left: PropTypes.number.isRequired,
