@@ -1,4 +1,4 @@
-import ImageAccordion from './components/ImageAccordion'
+import ImageAccordion from '../src/components/ImageAccordion'
 
 export default {
   ImageAccordion,

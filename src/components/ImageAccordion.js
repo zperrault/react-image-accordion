@@ -6,19 +6,30 @@ export default class ImageAccordion extends Component {
 
   static propTypes = {
     images: PropTypes.array.isRequired,
-    width: PropTypes.number.isRequired,
-    height: PropTypes.number.isRequired,
+    width: PropTypes.number,
+    height: PropTypes.number,
   }
 
   constructor(props) {
     super(props)
+    const { width, height } = props
     this.state = {
       selectedImage: null,
       imageDimensions: {},
+      inheritHeight: !height,
+      inheritWidth: !width,
+      width: 900,
+      height: 300,
     }
 
     this.handleMouseOver = this.handleMouseOver.bind(this)
     this.handleImageLoaded = this.handleImageLoaded.bind(this)
+  }
+
+  componentDidMount() {
+    const { inheritWidth, inheritHeight } = this.state
+    if (inheritWidth) this.setState({ width: this.refs.container.parentNode.clientWidth })
+    if (inheritHeight) this.setState({ height: this.refs.container.parentNode.clientHeight })
   }
 
   handleMouseOver(idx) {
@@ -43,10 +54,13 @@ export default class ImageAccordion extends Component {
   }
 
   render() {
-    const { images, width, height } = this.props
-    const { selectedImage, imageDimensions } = this.state
+    const { images } = this.props
+    const { selectedImage, imageDimensions, inheritWidth, inheritHeight } = this.state
+    const { width } = inheritWidth ? this.state : this.props
+    const { height } = inheritHeight ? this.state : this.props
     return (
       <div
+        ref="container"
         style={{
           width: `${width}px`,
           height: `${height}px`,
